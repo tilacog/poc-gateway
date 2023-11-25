@@ -11,7 +11,11 @@ crate-type = ["cdylib", "lib"]
 no-entrypoint = []
 
 [dependencies]
+arrayref = "0.3.7"
+num-derive = "0.4.1"
+num-traits = "0.2.17"
 solana-program = "1.17.6"
+thiserror = "1"
 
 [dev-dependencies]
 solana-program-test = "1.17.6"

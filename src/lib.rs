@@ -1,4 +1,9 @@
+#![deny(missing_docs)]
+
+//! Axelar Gateway program for the Solana blockchain
+
 mod entrypoint;
+mod error;
 pub mod instruction;
 pub mod processor;
 

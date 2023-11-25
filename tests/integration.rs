@@ -14,6 +14,8 @@ fn program_test() -> ProgramTest {
 async fn test_queue_message() {
     let (mut banks_client, payer, recent_blockhash) = program_test().start().await;
 
+    let instructiion = todo!();
+
     let mut transaction = Transaction::new_with_payer(&[], Some(&payer.pubkey()));
     transaction.sign(&[&payer], recent_blockhash);
     banks_client.process_transaction(transaction).await.unwrap();
