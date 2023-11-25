@@ -2,7 +2,9 @@
 
 #![cfg(not(feature = "no-entrypoint"))]
 
-use solana_program::{account_info::AccountInfo, entrypoint::ProgramResult, pubkey::Pubkey};
+use solana_program::account_info::AccountInfo;
+use solana_program::entrypoint::ProgramResult;
+use solana_program::pubkey::Pubkey;
 
 solana_program::entrypoint!(process_instruction);
 
