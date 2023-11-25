@@ -1,12 +1,12 @@
 use solana_program_test::{processor, tokio, ProgramTest};
-use solana_sdk::signature::{Keypair, Signer};
+use solana_sdk::signature::Signer;
 use solana_sdk::transaction::Transaction;
 
 fn program_test() -> ProgramTest {
     ProgramTest::new(
         "gateway",
         gateway::id(),
-        processor!(gateway::processor::process_instruction),
+        processor!(gateway::processor::Processor::process_instruction),
     )
 }
 
@@ -14,9 +14,14 @@ fn program_test() -> ProgramTest {
 async fn test_queue_message() {
     let (mut banks_client, payer, recent_blockhash) = program_test().start().await;
 
-    let instructiion = todo!();
+    let message_id = "";
+    let proof = &[];
+    let payload = &[];
 
-    let mut transaction = Transaction::new_with_payer(&[], Some(&payer.pubkey()));
+    let instruction =
+        gateway::instruction::queue(&gateway::id(), message_id, proof, payload).unwrap();
+
+    let mut transaction = Transaction::new_with_payer(&[instruction], Some(&payer.pubkey()));
     transaction.sign(&[&payer], recent_blockhash);
     banks_client.process_transaction(transaction).await.unwrap();
 }

@@ -1450,6 +1450,7 @@ dependencies = [
  "arrayref",
  "num-derive 0.4.1",
  "num-traits",
+ "rand 0.8.5",
  "solana-program",
  "solana-program-test",
  "solana-sdk",

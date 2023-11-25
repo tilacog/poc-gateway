@@ -6,7 +6,7 @@ use solana_program::msg;
 use solana_program::pubkey::Pubkey;
 
 use crate::error::GatewayError;
-use crate::instruction::GateweayInstruction;
+use crate::instruction::GatewayInstruction;
 
 /// Program state handler.
 pub struct Processor;
@@ -18,11 +18,11 @@ impl Processor {
         _accounts: &[AccountInfo],
         input: &[u8],
     ) -> ProgramResult {
-        let Ok(instruction) = GateweayInstruction::unpack(input) else {
+        let Ok(instruction) = GatewayInstruction::unpack(input) else {
             return Err(GatewayError::InvalidInstruction.into());
         };
         match instruction {
-            GateweayInstruction::Queue { .. } => {
+            GatewayInstruction::Queue { .. } => {
                 msg!("Instruction: Queue")
             }
         };
