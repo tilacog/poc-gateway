@@ -1450,10 +1450,10 @@ dependencies = [
  "arrayref",
  "num-derive 0.4.1",
  "num-traits",
- "rand 0.8.5",
  "solana-program",
  "solana-program-test",
  "solana-sdk",
+ "test-utilities",
  "thiserror",
 ]
 
@@ -4860,6 +4860,13 @@ dependencies = [
  "quote",
  "syn 2.0.39",
  "test-case-core",
+]
+
+[[package]]
+name = "test-utilities"
+version = "0.1.0"
+dependencies = [
+ "rand 0.8.5",
 ]
 
 [[package]]
